@@ -11,9 +11,32 @@ import com.rob.jetty.session.rs.response.entity.HealthEntity;
  */
 public final class HealthResponse extends AbstractRestfulResponse<HealthEntity>
 {
-    HealthResponse(int httpStatus, HealthEntity entity)
+    public HealthResponse()
     {
-        super(httpStatus, entity);
+    }
+
+    /**
+     * Sets the http status and return this.
+     *
+     * @param status HTTP status
+     * @return this
+     */
+    public HealthResponse setStatus(int status)
+    {
+        this.httpStatus = status;
+        return this;
+    }
+
+    /**
+     * Sets the entity and returns this.
+     *
+     * @param entity {@link HealthEntity}
+     * @return this
+     */
+    public HealthResponse setEntity(HealthEntity entity)
+    {
+        this.entity = entity;
+        return this;
     }
 
     /**
