@@ -33,6 +33,13 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-jetty</artifactId>
     </dependency>
+    <!--
+    Jetty NoSQL session managers
+    -->
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-nosql</artifactId>
+    </dependency>
   </dependencies>
 
   <build>
