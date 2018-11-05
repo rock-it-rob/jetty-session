@@ -25,6 +25,6 @@ public class Health
     {
         return new HealthResponse()
             .setStatus(Response.Status.OK.getStatusCode())
-            .setEntity(new HealthEntity());
+            .setEntity(new HealthEntity(true));
     }
 }
