@@ -40,6 +40,13 @@
       <groupId>org.eclipse.jetty</groupId>
       <artifactId>jetty-nosql</artifactId>
     </dependency>
+    <!--
+    Mongo Java driver
+    -->
+    <dependency>
+      <groupId>org.mongodb</groupId>
+      <artifactId>mongo-java-driver</artifactId>
+    </dependency>
   </dependencies>
 
   <build>
