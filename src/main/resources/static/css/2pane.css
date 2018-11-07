@@ -1,0 +1,39 @@
+.two-pane {
+    width: 46%;
+    min-width: 100px;
+    display: inline-block;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.border-color1 {
+    border-color: #9b6;
+}
+
+.border-color2 {
+    border-color: #69b;
+}
+
+.color1 {
+    background-color: #8a5;
+    color: #eeffee;
+}
+
+.color2 {
+    background-color: #58a;
+    color: #eeeeff;
+}
+
+.two-pane h2 {
+    font-size: 1.4em;
+    margin: -4px;
+    margin-bottom: 4px;
+}
+
+.two-pane .items {
+    list-style: none;
+}
+
+.two-pane .items li {
+    text-align: left;
+}

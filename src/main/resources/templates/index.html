@@ -2,17 +2,96 @@
 <html>
 <head>
   <title>Root</title>
-  <style>
-    * {
-      padding: 4px;
-      margin: 6px;
-      text-align: center;
-      font-size: 16px;
-      font-family: sans-serif;
-    }
-  </style>
+  <link rel="stylesheet" href="/css/main.css"/>
+  <link rel="stylesheet" href="/css/2pane.css"/>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous">
+  </script>
 </head>
 <body>
-<h1>Root</h1>
+  
+  <h1 class="title">Jetty Spring Boot Application</h1>
+
+  <div class="two-pane border-color1">
+    <h2 class="color1">App Health</h2>
+    <ul class="items">
+      <li>
+        <strong>up:</strong>
+        <span id="health-up"/>
+      </li>
+    </ul>
+  </div>
+
+  <div class="two-pane border-color2">
+    <h2 class="color2">Session Configuration</h2>
+    <ul class="items">
+      <li>
+        <strong>enabled:</strong>
+        <span id="session-enabled"/>
+      </li>
+      <li>
+        <strong>host:</strong>
+        <span id="session-host"/>
+      </li>
+      <li>
+        <strong>port:</strong>
+        <span id="session-port"/>
+      </li>
+      <li>
+        <strong>databaseName:</strong>
+        <span id="session-dbname"/>
+      </li>
+      <li>
+        <strong>collectionName:</strong>
+        <span id="session-collection"/>
+      </li>
+    </ul>
+  </div>
+
 </body>
+
+<script>
+  $(document).ready(function() {
+    loadHealth();
+    loadSession();
+    matchHeight();
+  });
+
+  function loadHealth()
+  {
+    $.getJSON(
+      '/rs/health',
+      function(data) {
+        $("#health-up").text(data.health.up);
+      });
+  }
+
+  function loadSession()
+  {
+    $.getJSON(
+      '/rs/mongoSession',
+      function(data) {
+        $("#session-enabled").text(data.mongoSessionInfo.enabled);
+        $("#session-host").text(data.mongoSessionInfo.host);
+        $("#session-port").text(data.mongoSessionInfo.port);
+        $("#session-dbname").text(data.mongoSessionInfo.databaseName);
+        $("#session-collection").text(data.mongoSessionInfo.collectionName);
+      });
+  }
+
+  function matchHeight()
+  {
+    var height = 0;
+    $(".two-pane").each(function(i, e) {
+      let h = $(e).height();
+      if (h > height) { height = h; }
+    });
+    $(".two-pane").each(function(i, e) {
+      $(e).height(height);
+    })
+  }
+</script>
+
 </html>
