@@ -5,5 +5,7 @@
 /.classpath
 /.project
 
+/.vscode
+
 *.class
 /target/
