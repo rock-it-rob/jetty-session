@@ -1,6 +1,7 @@
 package com.rob.jetty.session.rs;
 
 import com.rob.jetty.session.rs.resource.Health;
+import com.rob.jetty.session.rs.resource.MongoSessionInfo;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.stereotype.Component;
 
@@ -20,5 +21,6 @@ public class Application extends ResourceConfig
     public Application()
     {
         register(Health.class);
+        register(MongoSessionInfo.class);
     }
 }
