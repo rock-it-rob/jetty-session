@@ -112,6 +112,10 @@ public class Config
             // Create the session cache and add the data store to it.
             final NullSessionCache sessionCache = new NullSessionCache(sessionHandler);
             sessionCache.setSessionDataStore(dataStore);
+
+            // Once the session cache has been created it must be explicitly
+            // set back on the handler.
+            sessionHandler.setSessionCache(sessionCache);
         }
     }
 }
