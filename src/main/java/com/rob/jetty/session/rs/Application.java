@@ -1,5 +1,6 @@
 package com.rob.jetty.session.rs;
 
+import com.rob.jetty.session.rs.resource.Health;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.stereotype.Component;
 

@@ -1,42 +1,26 @@
 package com.rob.jetty.session.rs.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.rob.jetty.session.rs.resource.Health;
 import com.rob.jetty.session.rs.response.entity.HealthEntity;
 
 /**
  * HealthResponse is the representation of a response from the
- * {@link com.rob.jetty.session.rs.Health} resource.
+ * {@link Health} resource.
  *
  * @author Rob Benton
  */
 public final class HealthResponse extends AbstractRestfulResponse<HealthEntity>
 {
-    public HealthResponse()
-    {
-    }
-
     /**
-     * Sets the http status and return this.
+     * Creates a new instance.
      *
-     * @param status HTTP status
-     * @return this
+     * @param httpStatus HTTP status code
+     * @param entity     {@link HealthEntity}
      */
-    public HealthResponse setStatus(int status)
+    public HealthResponse(int httpStatus, HealthEntity entity)
     {
-        this.httpStatus = status;
-        return this;
-    }
-
-    /**
-     * Sets the entity and returns this.
-     *
-     * @param entity {@link HealthEntity}
-     * @return this
-     */
-    public HealthResponse setEntity(HealthEntity entity)
-    {
-        this.entity = entity;
-        return this;
+        super(httpStatus, entity);
     }
 
     /**

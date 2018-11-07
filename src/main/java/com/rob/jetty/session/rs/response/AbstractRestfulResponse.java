@@ -2,14 +2,20 @@ package com.rob.jetty.session.rs.response;
 
 /**
  * AbstractRestfulResponse is the base class for all JAX-RS response classes.
- * The paramter <code>T</code> is the type of entity the response contains.
  *
+ * @param <T> the entity type contained in the response.
  * @author Rob Benton
  */
 public abstract class AbstractRestfulResponse<T>
 {
-    int httpStatus;
-    T entity;
+    protected final int httpStatus;
+    protected final T entity;
+
+    AbstractRestfulResponse(int httpStatus, T entity)
+    {
+        this.httpStatus = httpStatus;
+        this.entity = entity;
+    }
 
     /**
      * Gets the http status code of the response.
@@ -24,13 +30,10 @@ public abstract class AbstractRestfulResponse<T>
     /**
      * Gets the entity embedded in this reponse.
      * <p>
-     * Extending classes are encouraged to use the {@link com.fasterxml.jackson.annotation.JsonProperty}
+     * Extending classes should use the {@link com.fasterxml.jackson.annotation.JsonProperty}
      * annotation to change the property name.
      *
      * @return T
      */
-    public T getEntity()
-    {
-        return entity;
-    }
+    public abstract T getEntity();
 }

@@ -1,4 +1,4 @@
-package com.rob.jetty.session.rs;
+package com.rob.jetty.session.rs.resource;
 
 import com.rob.jetty.session.rs.response.HealthResponse;
 import com.rob.jetty.session.rs.response.entity.HealthEntity;
@@ -23,8 +23,9 @@ public class Health
     @Produces(MediaType.APPLICATION_JSON)
     public HealthResponse get()
     {
-        return new HealthResponse()
-            .setStatus(Response.Status.OK.getStatusCode())
-            .setEntity(new HealthEntity(true));
+        return new HealthResponse(
+            Response.Status.OK.getStatusCode(),
+            new HealthEntity(true)
+        );
     }
 }
