@@ -1,9 +1,8 @@
-package com.rob.jetty.session.rs.resource;
+package com.rob.jetty.rs.resource;
 
-import com.rob.jetty.session.profile.MongoDBJettySession;
-import com.rob.jetty.session.rs.response.MongoSessionInfoResponse;
-import com.rob.jetty.session.rs.response.entity.MongoSessionInfoEntity;
-import org.springframework.beans.BeansException;
+import com.rob.jetty.profile.MongoDBJettySession;
+import com.rob.jetty.rs.response.MongoSessionInfoResponse;
+import com.rob.jetty.rs.response.entity.MongoSessionInfoEntity;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;

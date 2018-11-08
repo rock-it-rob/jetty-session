@@ -1,4 +1,4 @@
-package com.rob.jetty.session.rs.response;
+package com.rob.jetty.rs.response;
 
 /**
  * AbstractRestfulResponse is the base class for all JAX-RS response classes.

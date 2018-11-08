@@ -1,27 +1,9 @@
 .two-pane {
-    width: 46%;
+    width: 47%;
     min-width: 100px;
     display: inline-block;
     border-width: 1px;
     border-style: solid;
-}
-
-.border-color1 {
-    border-color: #9b6;
-}
-
-.border-color2 {
-    border-color: #69b;
-}
-
-.color1 {
-    background-color: #8a5;
-    color: #eeffee;
-}
-
-.color2 {
-    background-color: #58a;
-    color: #eeeeff;
 }
 
 .two-pane h2 {

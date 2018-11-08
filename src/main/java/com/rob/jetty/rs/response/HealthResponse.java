@@ -1,8 +1,8 @@
-package com.rob.jetty.session.rs.response;
+package com.rob.jetty.rs.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.rob.jetty.session.rs.resource.Health;
-import com.rob.jetty.session.rs.response.entity.HealthEntity;
+import com.rob.jetty.rs.resource.Health;
+import com.rob.jetty.rs.response.entity.HealthEntity;
 
 /**
  * HealthResponse is the representation of a response from the

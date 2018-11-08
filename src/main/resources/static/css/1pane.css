@@ -1,0 +1,12 @@
+.one-pane {
+    width: 97%;
+    border-width: 1px;
+    border-style: solid;
+    margin: auto;
+}
+
+.one-pane h2 {
+    font-size: 1.4em;
+    margin: -4px;
+    margin-bottom: 4px;
+}

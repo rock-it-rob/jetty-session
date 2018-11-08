@@ -5,7 +5,7 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.rob.jetty.session</groupId>
+  <groupId>com.rob.jetty</groupId>
   <artifactId>jetty-app</artifactId>
   <version>1.0</version>
 
@@ -76,6 +76,13 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <systemPropertyVariables>
+            <!-- This property needs to be defined here in order to read from
+            the command line. This is dumb. -->
+            <spring.profiles.active>${spring.profiles.active}</spring.profiles.active>
+          </systemPropertyVariables>
+        </configuration>
       </plugin>
     </plugins>
   </build>

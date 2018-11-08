@@ -1,4 +1,4 @@
-package com.rob.jetty.session.profile;
+package com.rob.jetty.profile;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;

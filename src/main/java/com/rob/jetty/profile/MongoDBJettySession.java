@@ -1,6 +1,8 @@
-package com.rob.jetty.session.profile;
+package com.rob.jetty.profile;
 
-import com.rob.jetty.session.configuration.MongoSessionJettyConfiguration;
+import com.rob.jetty.configuration.MongoSessionJettyConfiguration;
+import com.rob.jetty.session.MongoSessionDataExtractor;
+import com.rob.jetty.session.SessionDataExtractor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -69,5 +71,16 @@ public class MongoDBJettySession
             factory.addConfigurations(
                 new MongoSessionJettyConfiguration(mongoHost, mongoPort, mongoDbname, mongoCollectionName)
             );
+    }
+
+    /**
+     * Create the session extractor bean.
+     *
+     * @return SessionDataExtractor
+     */
+    @Bean
+    public SessionDataExtractor sessionDataExtractor()
+    {
+        return new MongoSessionDataExtractor();
     }
 }

@@ -1,4 +1,4 @@
-package com.rob.jetty.session.configuration;
+package com.rob.jetty.configuration;
 
 import org.eclipse.jetty.nosql.mongodb.MongoSessionDataStoreFactory;
 import org.eclipse.jetty.server.session.NullSessionCache;

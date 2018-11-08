@@ -1,4 +1,4 @@
-package com.rob.jetty.session;
+package com.rob.jetty;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

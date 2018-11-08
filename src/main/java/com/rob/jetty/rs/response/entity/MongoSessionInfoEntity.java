@@ -1,4 +1,4 @@
-package com.rob.jetty.session.rs.response.entity;
+package com.rob.jetty.rs.response.entity;
 
 /**
  * MongoSessionInfoEntity contains the information regarding the configuration

@@ -1,7 +1,7 @@
-package com.rob.jetty.session.rs.response;
+package com.rob.jetty.rs.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.rob.jetty.session.rs.response.entity.MongoSessionInfoEntity;
+import com.rob.jetty.rs.response.entity.MongoSessionInfoEntity;
 
 /**
  * @author Rob Benton

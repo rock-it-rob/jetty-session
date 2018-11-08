@@ -1,7 +1,7 @@
-package com.rob.jetty.session.rs.resource;
+package com.rob.jetty.rs.resource;
 
-import com.rob.jetty.session.rs.response.HealthResponse;
-import com.rob.jetty.session.rs.response.entity.HealthEntity;
+import com.rob.jetty.rs.response.HealthResponse;
+import com.rob.jetty.rs.response.entity.HealthEntity;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

@@ -1,7 +1,7 @@
-package com.rob.jetty.session.rs;
+package com.rob.jetty.rs;
 
-import com.rob.jetty.session.rs.resource.Health;
-import com.rob.jetty.session.rs.resource.MongoSessionInfo;
+import com.rob.jetty.rs.resource.Health;
+import com.rob.jetty.rs.resource.MongoSessionInfo;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.springframework.stereotype.Component;
 

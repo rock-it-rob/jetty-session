@@ -1,4 +1,4 @@
-package com.rob.jetty.session.rs.response.entity;
+package com.rob.jetty.rs.response.entity;
 
 /**
  * HealthEntity is a POJO containing the properties about the health of the
