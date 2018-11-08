@@ -1,5 +1,8 @@
 package com.rob.jetty.profile;
 
+import com.rob.jetty.session.DefaultSessionDataExtractor;
+import com.rob.jetty.session.SessionDataExtractor;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
@@ -14,4 +17,10 @@ import org.springframework.context.annotation.Profile;
 public class Default
 {
     public static final String PROFILE = "default";
+
+    @Bean
+    public SessionDataExtractor sessionDataExtractor()
+    {
+        return new DefaultSessionDataExtractor();
+    }
 }
