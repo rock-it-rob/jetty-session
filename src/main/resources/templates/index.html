@@ -54,6 +54,13 @@
 
   <div class="one-pane border-color1">
     <h2 class="color1">Session</h2>
+    <div id="make-session" sytle="display: none" onclick="createSession()">
+        <input type="button" value="Create Session"/>
+    </div>
+    <div id="session-data" style="display: none">
+      <pre id="session-contents"></pre>
+      <input type="button" value="Delete Session" onclick="deleteSession()"/>
+    </div>
   </div>
 
 </body>
@@ -63,6 +70,7 @@
     loadHealth();
     loadSession();
     matchHeight();
+    loadSessionData();
   });
 
   function loadHealth()
@@ -85,6 +93,41 @@
         $("#session-dbname").text(data.mongoSessionInfo.databaseName);
         $("#session-collection").text(data.mongoSessionInfo.collectionName);
       });
+  }
+
+  function loadSessionData()
+  {
+    $.getJSON('/session')
+      .done(function(data, status, jqxhr) {
+        $("#make-session").css("display", "none");
+        $("#session-data").css("display", "block");
+        $("#session-contents").text(JSON.stringify(data.contents));
+      })
+      .fail(function(jqxhr, status, error) {
+        if (jqxhr.status == 404) {
+          $("#make-session").css("display", "block");
+          $("#session-data").css("display", "none");
+        }
+        else {
+          console.log(jqxhr);
+        }
+      });
+  }
+
+  function createSession()
+  {
+    $.ajax({
+      type: 'POST',
+      url: '/session'
+    }).done(function() { setTimeout(loadSessionData, 100)});
+  }
+
+  function deleteSession()
+  {
+    $.ajax({
+      type: 'DELETE',
+      url: '/session'
+    }).done(loadSessionData());
   }
 
   function matchHeight()

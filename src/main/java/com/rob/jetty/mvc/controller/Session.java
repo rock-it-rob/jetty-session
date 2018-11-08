@@ -2,7 +2,6 @@ package com.rob.jetty.mvc.controller;
 
 import com.rob.jetty.session.SessionContents;
 import com.rob.jetty.session.SessionDataExtractor;
-import org.eclipse.jetty.webapp.WebAppContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +10,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Session is a spring MVC controller that handles the creation and destruction
@@ -88,6 +85,7 @@ public class Session
 
         if (session == null)
         {
+            log.debug("No HttpSession");
             return ResponseEntity.notFound().build();
         }
 
@@ -95,6 +93,7 @@ public class Session
 
         if (sessionContents == null)
         {
+            log.debug("No SessionContents");
             return ResponseEntity.notFound().build();
         }
 
