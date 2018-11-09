@@ -1,0 +1,25 @@
+version: '3.5'
+
+services:
+
+  # webapp is the main application.
+  webapp:
+    build:
+      context: ./
+      args:
+        http_proxy: ${http_proxy}
+        https_proxy: ${https_proxy}
+        app_version: 1.0
+    ports:
+      - '80:8080'
+    environment:
+      spring.profiles.active: 'mongo-jetty-session'
+      mongo.host: 'session'
+
+  # session is the mongo db instance that will hold http sessions.
+  session:
+    image: mongo:4.0.3
+    ports:
+      - '27017:27017'
+    environment:
+      MONGO_INITDB_DATABASE: 'session'
